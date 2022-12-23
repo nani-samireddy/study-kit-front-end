@@ -1,5 +1,6 @@
-import Navbar from '../Navbar';
-import Homepage from '../Pages/Homepage';
+import Navbar from '../Pages/Navbar';
+import Homepage from '../Pages/Hompage/Homepage';
+import './App.css';
 function App() {
   return (
     <div className="App">

@@ -1,6 +1,5 @@
 import './searchModal.css';
 import { useState } from 'react';
-import { handleChildElementClick } from '../../Utils/Util_functions';
 
 const SearchModal = ({ showSearchModal, toggleSearhcModal }) => {
     let exams = [
