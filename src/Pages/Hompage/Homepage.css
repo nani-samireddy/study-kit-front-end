@@ -1,9 +1,19 @@
-.cardsContainer{
+.contentContainer{
     width: 100%;   
+    
 }
 
 .containerTitle{
     font-size: 1rem;
     font-weight: 600;
     margin-left: 1rem;
+}
+
+.cardsContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+    justify-content: space-evenly;
+    
+
 }
