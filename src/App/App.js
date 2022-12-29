@@ -1,14 +1,12 @@
-import Navbar from '../Pages/Navbar';
-import Homepage from '../Pages/Hompage/Homepage';
+
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
+import routes from '../Routes';
+
 function App() {
+
   return (
-    <div className="App">
-      <Navbar />
-      <div className="content">
-        <Homepage />
-      </div>
-    </div>
+    <RouterProvider router={routes} />
   );
 }
 

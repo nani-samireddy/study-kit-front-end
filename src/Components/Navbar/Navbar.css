@@ -1,0 +1,23 @@
+nav {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  justify-content: space-between;
+  border-bottom: 1px solid #000;
+}
+
+nav > h1 {
+  font-weight: bold;
+}
+
+.links > a {
+  margin: 0 20px;
+  padding: 10px 20px;
+  border-radius: 50px;
+}
+
+.links > a:hover {
+  background-color: rgba(41, 36, 31, 0.107);
+  backdrop-filter: blur(40.5px);
+}

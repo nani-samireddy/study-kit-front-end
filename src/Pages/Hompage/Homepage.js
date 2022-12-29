@@ -3,17 +3,12 @@ import SearchModal from "../../Components/SearchModal/searchModal";
 import { useState } from "react";
 import "./Homepage.css";
 import Card from "./Card";
+import { NavLink } from "react-router-dom";
+import { dummyData } from "../../Utils/dummyData";
 
 
 
 
-const cardData = [
-    { title: "APEAMCET", description: "AP EAMCET entrance test." },
-    { title: "TSEAMCET", description: "TS EAMCET entrance test." },
-    { title: "APECET", description: "AP Polycet entrance test." },
-    { title: "TSECET", description: "TS Polycet entrance test." },
-    { title: "AP ECET", description: "AP ECET entrance test." },
-];
 
 
 const Homepage = () => {
@@ -27,7 +22,7 @@ const Homepage = () => {
                 <h1>Recently updated...</h1>
             </div>
             <div className="cardsContainer">
-                {cardData.map((card) => <Card title={card.title} description={card.description} />)}
+                {dummyData.map((card) => <NavLink to={"/Exampage/" + card.name}><Card title={card.title} description={card.description} /></NavLink>)}
             </div>
         </div>
     </div>);

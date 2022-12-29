@@ -1,0 +1,31 @@
+.chipContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding: 15px 15px;
+  background-color: #d8cfe8;
+  margin: 20px;
+  border-radius: 59px;
+  cursor: pointer;
+}
+.iconContainer {
+  height: 40px;
+  width: 40px;
+  background-color: #1d192b;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconContainer > svg {
+  height: 30px;
+  width: 30px;
+  fill: #ffffff;
+}
+
+.nameContainer {
+  padding: 0px 14px;
+}

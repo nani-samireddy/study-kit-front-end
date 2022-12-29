@@ -1,13 +1,10 @@
 import './searchModal.css';
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { dummyData } from '../../Utils/dummyData';
 
 const SearchModal = ({ showSearchModal, toggleSearhcModal }) => {
-    let exams = [
-        { name: "apeamcet", },
-        { name: "tseamcet", },
-        { name: "apecet", },
-        { name: "tsecet", },
-    ];
+
     const [searchQuery, setSearchQuery] = useState("");
     return (
         <div>
@@ -35,19 +32,25 @@ const SearchModal = ({ showSearchModal, toggleSearhcModal }) => {
                             onChange={(e) => { setSearchQuery(e.target.value) }} />
                     </div>
                     <div className="searchResultsContainer">
-                        {exams.filter((exam) => {
+                        {dummyData.filter((exam) => {
                             if (searchQuery === "") {
                                 return exam;
                             } else if (exam.name.toLowerCase().includes(searchQuery.toLowerCase())) {
                                 return exam;
                             }
+                            else{
+                                return null;
+                            }
                         }).map((exam) => {
                             return (
-                                <div className="searchResult">
-                                    <div className="examName">
-                                        {exam.name}
+                                <NavLink to={"/Exampage/" + exam.name}>
+                                    <div className="searchResult">
+                                        <div className="examName">
+                                            {exam.title}
+                                        </div>
                                     </div>
-                                </div>)
+                                </NavLink>
+                            )
                         })}
                     </div>
                 </div>
