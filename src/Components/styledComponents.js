@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const TestModesCard = styled.div`
+export const TestModesCard = styled.div`
 box-sizing: border-box;
 height: auto;
 width: 322px;
@@ -15,5 +15,16 @@ cursor: pointer;
 `;
 
 
-
-export default TestModesCard;
+export const ChipContainer = styled.div`
+ display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding: 15px 15px;
+  background-color: #d8cfe8;
+  margin: 20px;
+  border-radius: 59px;
+  cursor: pointer;
+  opacity: ${props => props.isSelected ? 1 : 0.5};
+`;
