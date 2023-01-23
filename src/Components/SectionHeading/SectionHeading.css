@@ -1,0 +1,13 @@
+.sectinTitleContainer {
+  margin-left: 80px;
+  margin-top: 200px;
+}
+.sectinTitleContainer > h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+.sectinTitleContainer > p {
+  font-size: 1.5rem;
+  margin-left: 80px;
+  margin-top: 10px;
+}

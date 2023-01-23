@@ -1,0 +1,27 @@
+.headerContainer {
+  height: 80vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header {
+  padding: 120px 120px;
+  text-align: center;
+  height: auto;
+  width: auto;
+  background: rgba(255, 255, 255, 0.36);
+  border: 8px solid #121534;
+  box-shadow: 10px 11px 0px 1px rgba(175, 218, 53, 0.25);
+  backdrop-filter: blur(42.5px);
+  -webkit-backdrop-filter: blur(42.5px);
+  border-radius: 34px;
+}
+.examTitle {
+  font-size: 5rem;
+  font-weight: 700;
+}
+
+.examDescription {
+  font-size: 2rem;
+}

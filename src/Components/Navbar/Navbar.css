@@ -1,4 +1,4 @@
-nav {
+.nav {
   padding: 20px;
   display: flex;
   align-items: center;
@@ -7,7 +7,7 @@ nav {
   border-bottom: 1px solid #000;
 }
 
-nav > h1 {
+.nav > h1 {
   font-weight: bold;
 }
 

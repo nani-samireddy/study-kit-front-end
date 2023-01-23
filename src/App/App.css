@@ -1,7 +1,6 @@
-
 .App {
   min-height: 100vh;
-  background-image: url("/docs/bg.png");
+  background-image: url("/public/bg.png");
   background-position: center;
   background-repeat: repeat;
   background-size: cover;

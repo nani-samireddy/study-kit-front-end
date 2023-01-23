@@ -4,38 +4,46 @@ import { TestModesCard } from '../../Components/styledComponents';
 import Navbar from '../../Components/Navbar/Navbar';
 import Chip from '../../Components/Chip/Chip';
 import { useState } from 'react';
-
+import ExampageHeader from '../../Components/ExamPageHeader/ExamPageHeader';
+import SectionHeading from '../../Components/SectionHeading/SectionHeading';
+import ListTable from '../../Components/ListTable/ListTable';
+import { NavLink } from 'react-router-dom';
 const ExamPage = () => {
     const examDetails = useLoaderData();
     const [selectedSubjects, setSelectedSubjects] = useState([]);
-    console.log(selectedSubjects);
+
+
+
     return (
         <div className="Exampage">
             <Navbar />
             {
                 // Header
             }
-            <div className="headerContainer">
-                <div className="header">
-                    <h1 className='examTitle'>{examDetails.examName}</h1>
-                    <p className='examDescription'>{examDetails.examDescription}</p>
-                </div>
-            </div>
+            <ExampageHeader examName={examDetails.stream.streamName} examDescription={examDetails.exam.description} />
             {
                 // Test Modes Cards
             }
             <div className="testModesCardsContainer">
                 <div className="testModesCards">
-                    <TestModesCard bg="#E1FDBE">
-                        <span>
-                            Attempt<br /> Random Test
-                        </span>
-                    </TestModesCard>
-                    <TestModesCard bg="#FEA3A8">
-                        <span>
-                            Attempt<br /> Previous years
-                        </span>
-                    </TestModesCard>
+                    <NavLink
+                        to={"/tp/frt/" + examDetails.exam._id + "/" + examDetails.stream._id}
+                        target="_blank"
+                    >
+                        <TestModesCard bg="#E1FDBE">
+                            <span>
+                                Attempt<br /> Random Test
+                            </span>
+                        </TestModesCard>
+                    </NavLink>
+
+                    <a href="#previousPapersSection">
+                        <TestModesCard bg="#FEA3A8">
+                            <span>
+                                Attempt<br /> Previous years
+                            </span>
+                        </TestModesCard>
+                    </a>
                     <a href='#customTestContainer'>
                         <TestModesCard bg="#A3D8FE" >
                             <span>
@@ -49,14 +57,15 @@ const ExamPage = () => {
                 // Custom Test Section  
             }
             <div id="customTestContainer" className='customTestContainer'>
-                <div className="customTestTitleContainer">
-                    <h1>Customize your Test 🚀</h1>
-                    <p>Select the parts to include in your test</p>
-                </div>
+                <SectionHeading
+                    title={"Customize your Test 🚀"}
+                    subTitle={"Select the parts to include in your test"}
+                />
+
 
                 <div className="customTestChipsContainer">
                     <div className="customTestChips">
-                        {examDetails.subjects.map((subject, index) => {
+                        {examDetails.stream.subjects.map((subject, index) => {
                             if (selectedSubjects.includes(subject)) {
                                 return (
                                     <div onClick={() => {
@@ -69,7 +78,7 @@ const ExamPage = () => {
                             } else { return null; }
                         })
                         }
-                        {examDetails.subjects.map((subject, index) => {
+                        {examDetails.stream.subjects.map((subject, index) => {
 
                             if (!selectedSubjects.includes(subject)) {
                                 return (
@@ -100,8 +109,19 @@ const ExamPage = () => {
             {
                 // Previous Papers section
             }
-            <div className="previousPapersSection">
-                
+            <div className="previousPapersSection" id="previousPapersSection">
+                <SectionHeading
+                    title={"Attempt Previous years papers📑"}
+                    subTitle={"Increase your confidence by attempting the previous test papers"}
+                />
+                <ListTable
+                    cols={["SNO", "year", "name"]}
+                    data={examDetails.previousPapers}
+                    colNames={["year", "name"]}
+                    link={"/tp/pp/"}
+                    id={"previousPaperId"}
+                />
+
             </div>
         </div>
     );

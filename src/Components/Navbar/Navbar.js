@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 const Navbar = () => {
     return (
-        <nav>
+        <nav className='nav'>
             <h1 className="sitetitle">STUDYKIT</h1>
             <div className="links">
                 <NavLink to="/">Home</NavLink>
