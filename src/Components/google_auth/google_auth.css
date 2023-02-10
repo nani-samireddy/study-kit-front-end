@@ -1,0 +1,24 @@
+.auth-button-leading-icon {
+  width: 24px;
+  height: 24px;
+}
+.auth-button {
+  padding: 10px 20px;
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  align-content: center;
+  gap: 16px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 20px;
+  font-size: 18px;
+  transition: all 0.25s ease-in-out;
+}
+
+.auth-button:hover {
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.97);
+}

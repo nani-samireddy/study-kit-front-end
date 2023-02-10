@@ -22,10 +22,11 @@ export const fetchExamStreamDatabyStreamId = async (examId, streamId) => {
     }
 }
 
-export const fetchFullRandomTest = async (examId, streamId) => {
-    const response = await fetch("http://localhost:4000/api/e/grp/" + examId + "/" + streamId);
+export const fetchFullRandomTest = async ({ examId, streamId, selectedSubjects } = {}) => {
+    const response = await fetch("http://localhost:4000/api/e/grp/" + examId + "/" + streamId + "/?subjects=" + selectedSubjects);
     const json = await response.json();
     if (response.ok) {
+        console.log("Full random test data fetched successfully");
         console.log(json);
         return json;
     }
@@ -35,6 +36,7 @@ export const fetchPreviousPaperTestData = async (previousPaperId) => {
     const response = await fetch("http://localhost:4000/api/e/gpp/" + previousPaperId);
     const json = await response.json();
     if (response.ok) {
+        console.log("Previous paper test data fetched successfully");
         console.log(json);
         return json;
     }

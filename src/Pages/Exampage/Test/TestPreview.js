@@ -1,8 +1,12 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLoaderData } from 'react-router-dom';
 import { Dtd, Ftd, Pbutton } from '../../../Components/styledComponents';
+import { createTestInstanceAndStartTheTest } from '../../../services/test_functions';
 import { faceIcon } from '../../../Utils/constants';
 import './TestPreview.css';
+
 const TestPreview = () => {
+    const testDeatils = useLoaderData();
+
     return (
         <div className='tp-page'>
             <nav className='tp-nav'>
@@ -17,29 +21,31 @@ const TestPreview = () => {
                 <div className="tp-page-td-title">TestDetails</div>
                 <div className="tp-page-test-details">
                     <table>
-                        <tr>
-                            <Ftd>Name</Ftd>
-                            <Dtd>APECET COMPUTER SCIENCE FULL RANDOM TEST</Dtd>
-                        </tr>
-                        <tr>
-                            <Ftd>Exam</Ftd>
-                            <Dtd>APECET</Dtd>
-                        </tr>
-                        <tr>
-                            <Ftd>Duration</Ftd>
-                            <Dtd>60mins</Dtd>
-                        </tr>
-                        <tr>
-                            <Ftd>Mode</Ftd>
-                            <Dtd>Custom(Chemistry, Physics, Computers)</Dtd>
-                        </tr>
-                        <tr>
-                            <Ftd>Total Marks</Ftd>
-                            <Dtd>150</Dtd>
-                        </tr>
+                        <tbody>
+                            <tr>
+                                <Ftd>Name</Ftd>
+                                <Dtd>{testDeatils.name}</Dtd>
+                            </tr>
+                            <tr>
+                                <Ftd>Exam</Ftd>
+                                <Dtd>{testDeatils.examName}</Dtd>
+                            </tr>
+                            <tr>
+                                <Ftd>Duration</Ftd>
+                                <Dtd>{testDeatils.duration}</Dtd>
+                            </tr>
+                            <tr>
+                                <Ftd>Mode</Ftd>
+                                <Dtd>{testDeatils.mode}( {testDeatils.selectedSubjects.join(", ")} )</Dtd>
+                            </tr>
+                            <tr>
+                                <Ftd>Total Marks</Ftd>
+                                <Dtd>{testDeatils.totalMarks}</Dtd>
+                            </tr>
+                        </tbody>
                     </table>
                 </div>
-                <Pbutton>
+                <Pbutton onClick={() => { createTestInstanceAndStartTheTest(testDeatils) }}>
                     Start Test
                 </Pbutton>
             </div>

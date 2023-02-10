@@ -52,7 +52,6 @@ export const Pbutton = styled.div`
 margin: 20px 0px;
   padding: 20px 80px;
   background-color: #3e1a31;
-  border: 4px solid #000000;
   box-sizing: border-box;
   color: rgb(255, 255, 255);
   font-size: 2rem;
@@ -62,8 +61,7 @@ margin: 20px 0px;
   border-radius: 5px;
   &:hover{
       filter: drop-shadow(8px 9px 0px rgba(0, 0, 0, 0.25));
-
-  }
+    }
  `;
 
 

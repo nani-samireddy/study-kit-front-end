@@ -28,7 +28,6 @@
   gap: 5px;
   font-size: 1.5em;
   width: min-content;
-
   border-radius: 16px;
   cursor: pointer;
   padding: 10px;
@@ -37,6 +36,7 @@
 .tp-nav-profile:hover {
   background-color: #a3d8fe;
 }
+
 .tp-nav-profile-icon {
   height: 24;
   width: 24;

@@ -24,8 +24,8 @@ export const previousPaperTestPreviewLoader = async ({ params }) => {
 }
 
 export const fullRandomTestPreviewLoader = async ({ params }) => {
-    const { examId, streamId } = params;
-    return await fetchFullRandomTest(examId, streamId);
+    const { examId, streamId, selectedSubjects } = params;
+    return await fetchFullRandomTest({ examId: examId, streamId: streamId, selectedSubjects: selectedSubjects });
 }
 
 export const subjectsRandomTestPreviewLoader = async ({ params }) => {

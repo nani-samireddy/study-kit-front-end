@@ -7,11 +7,12 @@ import { useState } from 'react';
 import ExampageHeader from '../../Components/ExamPageHeader/ExamPageHeader';
 import SectionHeading from '../../Components/SectionHeading/SectionHeading';
 import ListTable from '../../Components/ListTable/ListTable';
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { fetchFullRandomTest } from '../../services/database';
 const ExamPage = () => {
     const examDetails = useLoaderData();
     const [selectedSubjects, setSelectedSubjects] = useState([]);
-
+    const navigate = useNavigate();
 
 
     return (
@@ -26,16 +27,24 @@ const ExamPage = () => {
             }
             <div className="testModesCardsContainer">
                 <div className="testModesCards">
-                    <NavLink
-                        to={"/tp/frt/" + examDetails.exam._id + "/" + examDetails.stream._id}
-                        target="_blank"
-                    >
-                        <TestModesCard bg="#E1FDBE">
-                            <span>
-                                Attempt<br /> Random Test
-                            </span>
-                        </TestModesCard>
-                    </NavLink>
+
+                    <TestModesCard
+                        bg="#E1FDBE"
+                        onClick={
+                            () => {
+                                console.log("Random Test Button Clicked");
+                                console.log(examDetails.stream.subjects);
+                                fetchFullRandomTest({ examId: examDetails.exam._id, streamId: examDetails.stream._id, selectedSubjects: examDetails.stream.subjects.map((s) => s._id) }).then((test) => {
+                                    console.log(test);
+                                    navigate(`/tp/${test._id}`);
+                                });
+
+                            }}>
+                        <span>
+                            Attempt<br /> Random Test
+                        </span>
+                    </TestModesCard>
+
 
                     <a href="#previousPapersSection">
                         <TestModesCard bg="#FEA3A8">
