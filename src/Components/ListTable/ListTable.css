@@ -7,17 +7,27 @@
   width: 100%;
 }
 
-.theading{
-    background-color: #f2f2f2;
-    color: #000;
-    font-weight: bold;
-    font-size: 1.3rem;
-    text-align: left;
-    padding: 20px 60px;
+.theading {
+  background-color: #f2f2f2;
+  color: #000;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-align: left;
+  padding: 20px 60px;
 }
-td{
-    padding: 20px 60px;
-    font-size: 1.2rem;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+td {
+  padding: 20px 60px;
+  font-size: 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.action-col {
+  cursor: pointer;
+  color: #8000ff;
+  font-weight: bold;
+}
+.action-col:hover {
+  color: #000;
+  
 }

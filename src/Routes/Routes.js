@@ -44,14 +44,14 @@ const routes = createBrowserRouter(
                 },
                 {
                     path: "/Performance",
-                    element: <Performance />,
+                    element: <AuthProtectionWrapper ><Performance /></AuthProtectionWrapper>,
                     errorElement: ErrorPage,
 
 
                 },
                 {
                     path: "/Profile",
-                    element: <Profile />,
+                    element: <AuthProtectionWrapper><Profile /></AuthProtectionWrapper>,
                     errorElement: ErrorPage,
 
 
@@ -68,7 +68,7 @@ const routes = createBrowserRouter(
 
         {
             path: "/ExamPage/:examId",
-            element: <StreamPage />,
+            element: <AuthProtectionWrapper><StreamPage /></AuthProtectionWrapper>,
             loader: examStreamPageLoader,
             errorElement: ErrorPage,
             action: () => {
@@ -79,7 +79,7 @@ const routes = createBrowserRouter(
         },
         {
             path: '/ExamPage/:examId/:streamId',
-            element: <ExamPage />,
+            element: <AuthProtectionWrapper><ExamPage /></AuthProtectionWrapper>,
             loader: exampageLoader,
             errorElement: ErrorPage,
 
@@ -89,19 +89,19 @@ const routes = createBrowserRouter(
         },
         {
             path: '/tp/ppt/:previousPaperId',
-            element: <TestPreview />,
+            element: <AuthProtectionWrapper> <TestPreview /></AuthProtectionWrapper>,
             loader: previousPaperTestPreviewLoader,
             errorElement: ErrorPage,
         },
         {
             path: '/tp/:testId',
-            element: <TestPreview />,
+            element: <AuthProtectionWrapper> <TestPreview /></AuthProtectionWrapper>,
             errorElement: ErrorPage,
 
         },
         {
             path: '/tp/srt/:examId/streamId/:subjects',
-            element: <TestPreview />,
+            element: <AuthProtectionWrapper> <TestPreview /></AuthProtectionWrapper>,
             loader: subjectsRandomTestPreviewLoader,
             errorElement: ErrorPage,
         },

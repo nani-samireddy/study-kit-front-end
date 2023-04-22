@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import './ListTable.css';
-const ListTable = ({ cols, colNames, data, link, id }) => {
+const ListTable = ({ cols, colNames, data, link, id, isPrevTable, action }) => {
     return (
         <div className="tableContainer">
             <table className="table">
@@ -9,6 +9,7 @@ const ListTable = ({ cols, colNames, data, link, id }) => {
                         {cols.map((col, index) => (
                             <th className='theading' key={index}>{col.toUpperCase()}</th>
                         ))}
+                        {isPrevTable && <th className='theading'>ACTION</th>}
                     </tr>
                     {data.map((row, index) => {
                         return (
@@ -19,6 +20,9 @@ const ListTable = ({ cols, colNames, data, link, id }) => {
                                     <NavLink to={link + row[id]}>  {row[colNames[1]]}</NavLink>
 
                                 </td>
+                                {isPrevTable && <td ><div className='action-col' onClick={isPrevTable ? () => {
+                                    console.log("kjskjd")
+                                } : null}>Attempt Now</div></td>}
                             </tr>
                         );
                     })}

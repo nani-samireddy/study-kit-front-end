@@ -3,6 +3,7 @@ import '../auth.css';
 import { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../../context/AuthContext';
+import { loaderRings } from '../../../Components/loaders/loaderRings';
 
 
 const SingIn = () => {
@@ -25,7 +26,8 @@ const SingIn = () => {
 
     return (
         <div className='auth-container'>
-            <h1 className='auth-heading'>Welcome back Buddy!</h1>
+
+            <h1 className='auth-heading'>Welcome back!</h1>
             <div className="auth-form-container">
                 <div className='auth-form'>
                     <input

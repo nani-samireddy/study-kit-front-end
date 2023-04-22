@@ -22,6 +22,7 @@ const StreamPage = () => {
                     data={examStreamsDetails.streams}
                     link={"/ExamPage/" + examStreamsDetails.exam["_id"] + "/"}
                     id={"_id"}
+                    isPrevTable={false}
 
                 />
 

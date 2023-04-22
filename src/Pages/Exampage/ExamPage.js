@@ -129,6 +129,7 @@ const ExamPage = () => {
                     colNames={["year", "name"]}
                     link={"/tp/pp/"}
                     id={"previousPaperId"}
+                    isPrevTable={true}
                 />
 
             </div>

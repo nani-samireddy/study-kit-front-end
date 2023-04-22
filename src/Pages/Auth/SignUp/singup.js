@@ -9,7 +9,7 @@ const SignUp = () => {
     const [password, setPassword] = useState('');
     return (
         <div className='auth-container'>
-            <h1 className='auth-heading'>Hey Buddy! Register now <br />Start preparing</h1>
+            <h1 className='auth-heading'>Hey! Register now <br />Start preparing</h1>
             <div className="auth-form-container">
                 <form className='auth-form'>
                     <input
