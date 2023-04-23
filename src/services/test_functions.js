@@ -1,5 +1,6 @@
+import { API_URL } from "../Utils/constants";
 export const createTestInstanceAndStartTheTest = async (testData) => {
-    await fetch("http://localhost:4000/api/e/cti", {
+    await fetch(`${API_URL}/api/e/cti`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
