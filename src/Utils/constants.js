@@ -1,4 +1,4 @@
-export const API_URL = "https://study-kit-backend.vercel.app/";
+export const API_URL = "https://study-kit-backend.vercel.app";
 
 export const selected = <svg width="62" height="62" viewBox="0 0 62 62" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M23.2499 41.7725L12.4774 31L8.80908 34.6425L23.2499 49.0833L54.2499 18.0833L50.6074 14.4408L23.2499 41.7725Z" fill="white" />
